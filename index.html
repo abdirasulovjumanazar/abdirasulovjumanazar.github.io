@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)file:///C:/Users/Jumanazar/Downloads/portfolio%20(1).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jumanazar Abdirasulov — Data Analyst &amp; Scientist</title>
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --border: #1e1e2e;
+    --accent: #00e5ff;
+    --accent2: #7c3aed;
+    --text: #e8e8f0;
+    --muted: #6b6b80;
+    --card: #13131c;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Animated background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 10%, rgba(0,229,255,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(124,58,237,0.06) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+  }
+  nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    padding: 100px 0 80px;
+    position: relative;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(0,229,255,0.3);
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero h1 .highlight {
+    color: var(--accent);
+    position: relative;
+  }
+  .hero-role {
+    font-size: 1rem;
+    color: var(--muted);
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .contact-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    background: var(--card);
+  }
+  .contact-pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+  }
+  .contact-pill .icon { font-size: 0.9rem; }
+
+  /* SECTION */
+  section { padding: 64px 0; border-top: 1px solid var(--border); }
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+  }
+
+  /* PROFILE */
+  .profile-text {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 680px;
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .skill-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .skill-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .skill-card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 12px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tag {
+    font-size: 0.7rem;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 3px 9px;
+    border-radius: 2px;
+  }
+
+  /* EDUCATION */
+  .edu-list { display: flex; flex-direction: column; gap: 20px; }
+  .edu-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    transition: border-color 0.2s;
+  }
+  .edu-card:hover { border-color: var(--accent2); }
+  .edu-degree {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .edu-school { font-size: 0.8rem; color: var(--muted); }
+  .edu-year {
+    font-size: 0.72rem;
+    color: var(--accent);
+    white-space: nowrap;
+    border: 1px solid rgba(0,229,255,0.25);
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  /* COURSES */
+  .course-list { display: flex; flex-direction: column; gap: 12px; }
+  .course-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 16px 20px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    transition: border-color 0.2s;
+  }
+  .course-item:hover { border-color: var(--accent2); }
+  .course-dot {
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px rgba(0,229,255,0.5);
+  }
+  .course-name { font-weight: 500; }
+  .course-meta { font-size: 0.72rem; color: var(--muted); margin-left: auto; }
+  .badge-inprogress {
+    font-size: 0.65rem;
+    background: rgba(0,229,255,0.1);
+    color: var(--accent);
+    border: 1px solid rgba(0,229,255,0.2);
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 10px;
+  }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .project-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px;
+    text-decoration: none;
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .project-icon { color: var(--accent); font-size: 1.1rem; }
+  .project-lang { font-size: 0.68rem; color: var(--muted); }
+  .project-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text);
+  }
+  .project-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.6; flex: 1; }
+  .project-footer { display: flex; gap: 6px; flex-wrap: wrap; }
+  .project-tag {
+    font-size: 0.65rem;
+    color: var(--accent2);
+    background: rgba(124,58,237,0.1);
+    border: 1px solid rgba(124,58,237,0.2);
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  .projects-grid--single {
+    grid-template-columns: 1fr;
+  }
+  .project-card--featured {
+    border-color: rgba(0,229,255,0.25);
+    background: linear-gradient(135deg, #13131c 0%, #0f0f1a 100%);
+  }
+  .project-card--featured:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 40px rgba(0,229,255,0.07);
+  }
+  .badge-production {
+    font-size: 0.65rem;
+    background: rgba(0,229,255,0.08);
+    color: var(--accent);
+    border: 1px solid rgba(0,229,255,0.2);
+    padding: 2px 10px;
+    border-radius: 10px;
+  }
+  .bi-modules {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .bi-module {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+  .bi-module-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .bi-module-items {
+    font-size: 0.68rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  @media (max-width: 600px) {
+    .bi-modules { grid-template-columns: 1fr; }
+  }
+
+  /* LANGUAGES */
+  .lang-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .lang-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .lang-card:hover {
+    border-color: var(--accent2);
+    transform: translateY(-2px);
+  }
+  .lang-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .lang-level {
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    .lang-grid { grid-template-columns: repeat(2, 1fr); }
+    .edu-card { flex-direction: column; }
+    .nav-links { gap: 14px; }
+    .hero { padding: 60px 0 50px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <span class="nav-logo">JA.</span>
+    <ul class="nav-links">
+      <li><a href="file:///C:/Users/Jumanazar/Downloads/portfolio%20(1).html#about">About</a></li>
+      <li><a href="file:///C:/Users/Jumanazar/Downloads/portfolio%20(1).html#skills">Skills</a></li>
+      <li><a href="file:///C:/Users/Jumanazar/Downloads/portfolio%20(1).html#education">Education</a></li>
+      <li><a href="file:///C:/Users/Jumanazar/Downloads/portfolio%20(1).html#projects">Projects</a></li>
+      <li><a href="https://github.com/abdirasulovjumanazar" target="_blank">GitHub ↗</a></li>
+      <li><a href="file:///C:/Users/Jumanazar/Downloads/portfolio%20(1).html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero" id="about" style="border:none;">
+    <div class="hero-tag">Available for opportunities</div>
+    <h1>Jumanazar<br><span class="highlight">Abdirasulov</span></h1>
+    <p class="hero-role">Data Analyst &nbsp;/&nbsp; Data Scientist &nbsp;·&nbsp; Tashkent, Uzbekistan</p>
+    <div class="hero-contacts">
+      <a class="contact-pill" href="file:///C:/cdn-cgi/l/email-protection#e58487818c97849690898a938f9088848b849f8497a58288848c89cb868a88">
+        <span class="icon">✉</span> <span class="__cf_email__" data-cfemail="761714121f041705031a19001c031b1718170c170436111b171f1a5815191b">[email&nbsp;protected]</span>
+      </a>
+      <a class="contact-pill" href="tel:+998908833200">
+        <span class="icon">✆</span> +998 90 883 32 00
+      </a>
+      <a class="contact-pill" href="https://github.com/abdirasulovjumanazar" target="_blank">
+        <span class="icon">⌥</span> GitHub
+      </a>
+      <span class="contact-pill">
+        <span class="icon">◎</span> Tashkent, UZ
+      </span>
+    </div>
+  </section>
+
+  <!-- PROFILE -->
+  <section id="profile">
+    <div class="section-label">Profile</div>
+    <p class="profile-text">
+      Analytical and detail-oriented Data Analyst / Junior Data Scientist with hands-on experience in Python, SQL, statistical analysis, and machine learning. Skilled in cleaning and analyzing large datasets, creating visualizations, building predictive models, and supporting data-driven business decisions. Currently enhancing skills through a Complete Data Science Training course covering machine learning and deep learning.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-label">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-title">Machine Learning</div>
+        <div class="skill-tags">
+          <span class="tag">Linear Regression</span>
+          <span class="tag">Logistic Regression</span>
+          <span class="tag">Decision Trees</span>
+          <span class="tag">Random Forest</span>
+          <span class="tag">K-Means</span>
+          <span class="tag">PCA</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Programming</div>
+        <div class="skill-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag">Seaborn</span>
+          <span class="tag">Scikit-learn</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Statistics</div>
+        <div class="skill-tags">
+          <span class="tag">Probability</span>
+          <span class="tag">Hypothesis Testing</span>
+          <span class="tag">Statistical Analysis</span>
+          <span class="tag">Advanced Statistics</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Databases &amp; ETL</div>
+        <div class="skill-tags">
+          <span class="tag">SQL</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Data Cleaning</span>
+          <span class="tag">Preprocessing</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">BI &amp; Visualization</div>
+        <div class="skill-tags">
+          <span class="tag">Power BI</span>
+          <span class="tag">DAX</span>
+          <span class="tag">Tableau</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Pivot Tables</span>
+          <span class="tag">Power Query</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-title">Tools</div>
+        <div class="skill-tags">
+          <span class="tag">Git</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Jupyter</span>
+          <span class="tag">Anaconda</span>
+          <span class="tag">VS Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-label">Education</div>
+    <div class="edu-list">
+      <div class="edu-card">
+        <div>
+          <div class="edu-degree">Master's in Data Science</div>
+          <div class="edu-school">TUIT — Tashkent University of Information Technologies, Tashkent</div>
+        </div>
+        <div class="edu-year">2025 — Ongoing</div>
+      </div>
+      <div class="edu-card">
+        <div>
+          <div class="edu-degree">Bachelor's — Engineer-Programmer</div>
+          <div class="edu-school">TUITKF, Karshi</div>
+        </div>
+        <div class="edu-year">2021 — 2025</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section id="courses">
+    <div class="section-label">Courses</div>
+    <div class="course-list">
+      <div class="course-item">
+        <div class="course-dot"></div>
+        <div>
+          <span class="course-name">Complete Data Science Training</span>
+          <span class="badge-inprogress">In Progress</span>
+        </div>
+        <div class="course-meta">Udemy — Python · Statistics · ML · Deep Learning</div>
+      </div>
+      <div class="course-item">
+        <div class="course-dot"></div>
+        <div>
+          <span class="course-name">Data Science va Sun'iy Intellekt</span>
+          <span class="badge-inprogress">In Progress</span>
+        </div>
+        <div class="course-meta">Mohirdev</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-label">Projects</div>
+    <div class="projects-grid projects-grid--single">
+
+      <a class="project-card project-card--featured" href="https://github.com/abdirasulovjumanazar/bi-system" target="_blank">
+        <div class="project-header">
+          <span class="project-icon">◈</span>
+          <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+            <span class="project-lang">Python 94.5% · PowerShell 4.4% · Batch 1.1%</span>
+            <span class="badge-production">Production Ready ✅</span>
+          </div>
+        </div>
+        <div class="project-name" style="font-size:1.3rem;">BI System — Tibbiy va Biznes Analitika Platformasi</div>
+        <div class="project-desc">
+          Tibbiy muassasalar uchun kompleks Business Intelligence tizimi. ETL pipeline (kunlik, haftalik, oylik avtomatik ishga tushirish), PostgreSQL Data Warehouse va Power BI dashboardlar bilan to'liq yechim. Tizim 3 asosiy moduldan iborat: <strong style="color:var(--text)">Tezkoret (МИС)</strong> — bemorlar, qabullar, LTV; <strong style="color:var(--text)">Jarayon (CRM)</strong> — leads, kampaniyalar, ROI; <strong style="color:var(--text)">Biznes (ERP/1C)</strong> — moliya, inventar, cash flow.
+        </div>
+
+        <div class="bi-modules">
+          <div class="bi-module">
+            <div class="bi-module-title">🏥 Tibbiy (MIS)</div>
+            <div class="bi-module-items">Bemorlar · Qabullar · Shifokorlar · Tashxislar · LTV hisoblash</div>
+          </div>
+          <div class="bi-module">
+            <div class="bi-module-title">📣 Marketing (CRM)</div>
+            <div class="bi-module-items">Leads · Kampaniyalar · ROI · CPL · CPA · Call Center</div>
+          </div>
+          <div class="bi-module">
+            <div class="bi-module-title">💰 Moliya (ERP)</div>
+            <div class="bi-module-items">Sotuvlar · Xarajatlar · Inventar · Foyda · Cash Flow</div>
+          </div>
+        </div>
+
+        <div class="bi-modules" style="margin-top:8px;">
+          <div class="bi-module">
+            <div class="bi-module-title">🔄 ETL Pipeline</div>
+            <div class="bi-module-items">Kunlik 02:00 · Haftalik 03:00 · Oylik 04:00 avtomatik</div>
+          </div>
+          <div class="bi-module">
+            <div class="bi-module-title">📊 Power BI</div>
+            <div class="bi-module-items">Executive · Tibbiy · Marketing · Moliyaviy dashboardlar</div>
+          </div>
+          <div class="bi-module">
+            <div class="bi-module-title">🔐 Xavfsizlik</div>
+            <div class="bi-module-items">RLS · SSL/TLS · Role management · HIPAA compliance</div>
+          </div>
+        </div>
+
+        <div class="project-footer" style="margin-top:12px;">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Power BI</span>
+          <span class="project-tag">ETL Pipeline</span>
+          <span class="project-tag">Data Warehouse</span>
+          <span class="project-tag">DAX</span>
+          <span class="project-tag">SQLAlchemy</span>
+          <span class="project-tag">Pandas</span>
+          <span class="project-tag">PowerShell</span>
+        </div>
+      </a>
+
+      <a class="project-card project-card--featured" href="https://github.com/abdirasulovjumanazar/shifoxona-saas" target="_blank">
+        <div class="project-header">
+          <span class="project-icon">◈</span>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <span class="project-lang">HTML 66.9% · Python 33.1%</span>
+          </div>
+        </div>
+        <div class="project-name" style="font-size:1.3rem;">Shifoxona SaaS — Tibbiy Boshqaruv Platformasi</div>
+        <div class="project-desc">
+          Shifoxona va tibbiy muassasalar uchun SaaS veb-ilova. 
+          <strong style="color:var(--text)">FastAPI</strong> backend, 
+          <strong style="color:var(--text)">PostgreSQL</strong> ma'lumotlar bazasi va 
+          <strong style="color:var(--text)">HTML/CSS</strong> frontend bilan qurilgan to'liq veb-tizim. 
+          Routers, models va database layerlarga bo'lingan professional arxitektura.
+        </div>
+
+        <div class="bi-modules">
+          <div class="bi-module">
+            <div class="bi-module-title">⚙️ Backend</div>
+            <div class="bi-module-items">FastAPI · Routers · Models · SQLAlchemy</div>
+          </div>
+          <div class="bi-module">
+            <div class="bi-module-title">🗄️ Database</div>
+            <div class="bi-module-items">PostgreSQL · database.py · .env config</div>
+          </div>
+          <div class="bi-module">
+            <div class="bi-module-title">🌐 Frontend</div>
+            <div class="bi-module-items">HTML · CSS · Web Interface</div>
+          </div>
+        </div>
+
+        <div class="project-footer" style="margin-top:12px;">
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">REST API</span>
+          <span class="project-tag">SaaS</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section id="contact">
+    <div class="section-label">Languages</div>
+    <div class="lang-grid">
+      <div class="lang-card">
+        <div class="lang-name">Uzbek</div>
+        <div class="lang-level">Native</div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">English</div>
+        <div class="lang-level">Upper Intermediate</div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">Russian</div>
+        <div class="lang-level">B1</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  </footer></body></html>
